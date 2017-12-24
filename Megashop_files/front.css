@@ -1,0 +1,576 @@
+/**
+ * 2007-2017 Leotheme
+ *
+ * NOTICE OF LICENSE
+ *
+ * Leo feature for prestashop 1.7: ajax cart, review, compare, wishlist at product list 
+ *
+ * DISCLAIMER
+ *
+ *  @Module Name: Leo Feature
+ *  @author    leotheme <leotheme@gmail.com>
+ *  @copyright 2007-2017 Leotheme
+ *  @license   http://leotheme.com - prestashop template provider
+ */
+/*******************DONGND CSS FOR CART BEGIN*****************************/
+/* RIGHT TO LEFT */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BORDER RADIUS */
+/* DOUBLE BORDERS */
+/* TRIPLE BORDERS */
+/* FONT FACE */
+/* OPACITY */
+/* TEXT SHADOW */
+/**
+* Transition-timing-function property@mixin 
+*/
+/*background RGBA
+============================================*/
+/****/
+/**parallax**/
+/**absolute**/
+/*  
+ * LAYOUT VARIABLES 
+ */
+.leo-bt-cart.disable {
+  /* cursor: not-allowed; */
+  /* opacity: .65; */
+}
+
+.leo-bt-cart.disabled:focus {
+  background: #acaaa6;
+}
+
+.leo-modal .modal-content {
+  border-radius: 0;
+}
+
+.leo-modal-cart .modal-dialog, .leo-modal-compare .modal-dialog, .leo-modal-wishlist .modal-dialog {
+  margin: 250px auto;
+}
+
+.leo-modal .modal-title .material-icons {
+  margin-right: 5px;
+}
+.rtl .leo-modal .modal-title .material-icons {
+  margin-left: 5px;
+  margin-right: inherit;
+}
+
+.leo-modal-cart .modal-title {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.125rem;
+  display: none;
+}
+
+.leo-modal-cart .modal-header {
+  border: none;
+}
+
+.leo-modal .modal-header.info-mess, .leo-modal .modal-header.warning-mess {
+  background: #2FB5D2;
+}
+
+.leo-modal .modal-header.block-mess {
+  background: #F39D72;
+}
+
+.leo-loading, .leo-modal-review-loading, .leo-compare-bt-loading, .leo-wishlist-bt-loading {
+  display: none;
+}
+
+.leo-wishlist-button.added .leo-wishlist-bt-loading, .leo-compare-button.added .leo-compare-bt-loading {
+  border: 2px solid #fff;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.leo-wishlist-button .leo-wishlist-bt-loading, .leo-compare-button .leo-compare-bt-loading {
+  border: 2px solid #2FB5D2;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.cssload-speeding-wheel {
+  width: 14px;
+  height: 14px;
+  margin: 0 auto;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: cssload-spin 800ms infinite linear;
+  -o-animation: cssload-spin 800ms infinite linear;
+  -ms-animation: cssload-spin 800ms infinite linear;
+  -webkit-animation: cssload-spin 800ms infinite linear;
+  -moz-animation: cssload-spin 800ms infinite linear;
+}
+
+@keyframes cssload-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes cssload-spin {
+  100% {
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-ms-keyframes cssload-spin {
+  100% {
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes cssload-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes cssload-spin {
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/*
+.leo-modal .vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+
+.leo-modal .modal-dialog{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.leo-modal .modal-content {
+    max-width: 600px;
+	margin: 0 auto;
+}
+*/
+.leo-bt-select-attr, .leo-dropdown-attr {
+  width: 100%;
+}
+
+.leo-select-attr.selected, .leo-select-attr.selected.disable, .leo-select-attr:hover {
+  background: #A0D468;
+  color: #fff;
+}
+
+.leo-select-attr.disable {
+  background: #EBEBEB;
+}
+
+.leo-dropdown-attr {
+  padding: 0px;
+  z-index: 999;
+}
+
+/*******************DONGND CSS FOR CART END*****************************/
+/*******************DONGND CSS FOR REVIEWS BEGIN*****************************/
+.leo-modal-review .modal-title, .leo-modal-send-wishlist .modal-title {
+  text-transform: uppercase;
+}
+
+.leo-modal-review .modal-dialog {
+  max-width: 650px;
+}
+
+.cancel, .cancel a {
+  background: url(../img/delete.gif) no-repeat 0 -16px !important;
+  width: 18px !important; }
+
+.cancel, .star {
+  overflow: hidden;
+  float: left;
+  margin: 0 1px 0 0;
+  width: 12px;
+  height: 16px;
+  cursor: pointer;
+  line-height: 16px;
+}
+.rtl .cancel, .rtl .star {
+  float: right;
+}
+
+.star_content {
+  float: left;
+}
+.rtl .star_content {
+  float: right;
+}
+
+div.star:after {
+  content: "\f005";
+  font-family: "FontAwesome";
+  display: inline-block;
+  color: #cecece;
+  font-size: 11px;
+}
+
+div.star.star_on, div.star.star_hover {
+  display: block;
+}
+div.star.star_on:after, div.star.star_hover:after {
+  content: "\f005";
+  font-family: "FontAwesome";
+  display: inline-block;
+  color: #f7c045;
+}
+
+#criterions_list {
+  list-style-type: none;
+}
+
+#criterions_list li {
+  margin-bottom: 10px;
+}
+
+#criterions_list label {
+  display: inline;
+  float: left;
+  margin: 0 10px 0 0;
+}
+.rtl #criterions_list label {
+  float: right;
+}
+
+.star a {
+  /*display: block;*/
+  display: none;
+  position: absolute;
+  text-indent: -5000px;
+}
+
+.new_review_form_content #criterions_list {
+  border-bottom: 1px solid #CCC;
+  padding-bottom: 15px;
+  list-style-type: none;
+}
+
+/* .new_review_form_content .form-group.leo-has-error input, .new_review_form_content .form-group.leo-has-error textarea */
+/* { */
+/* outline: 1px solid #ff4c4c; */
+/* } */
+.leo-fake-button, .leo-fake-send-wishlist-button {
+  display: none;
+}
+
+.open-review-form {
+  display: none;
+}
+
+.leo-modal-review .has-success, .leo-modal-review .has-danger {
+  text-align: center;
+}
+
+.leo-modal-review .has-success label, .leo-modal-review .has-danger label {
+  font-weight: 600;
+  font-size: 1.125rem;
+  display: inline;
+}
+
+.leo-list-product-reviews .star_content, .leo-list-product-reviews .star, #leo_product_reviews_block_extra .star_content, #leo_product_reviews_block_extra .star, .review_author .star_content, .review_author .star, .product-rating .star_content, .product-rating .star {
+  cursor: default;
+}
+
+.leo-list-product-reviews-wraper {
+  display: inline-block;
+  line-height: 22px;
+}
+
+#leo_product_reviews_block_extra .reviews_note > span {
+  float: left;
+}
+.rtl #leo_product_reviews_block_extra .reviews_note > span {
+  float: right;
+}
+
+.reviews_advices {
+  padding: 10px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.reviews_advices li {
+  display: inline-block;
+}
+
+.reviews_advices li.last {
+  padding-left: 10px;
+  margin-left: 10px;
+  border-left: 1px solid #e9e9e9;
+}
+.rtl .reviews_advices li.last {
+  padding-right: 10px;
+  padding-left: inherit;
+}
+.rtl .reviews_advices li.last {
+  margin-right: 10px;
+  margin-left: inherit;
+}
+.rtl .reviews_advices li.last {
+  border-right: 1px solid #e9e9e9;
+  border-left: 0;
+}
+
+#product_reviews_block_tab .review {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #B5AAB0;
+  padding-bottom: 10px;
+}
+
+#product_reviews_block_tab .review_author {
+  border-right: 1px solid #e9e9e9;
+}
+.rtl #product_reviews_block_tab .review_author {
+  border-left: 1px solid #e9e9e9;
+  border-right: 0;
+}
+
+#product_reviews_block_tab .review_details .title_block {
+  text-decoration: underline;
+  font-style: italic;
+  text-transform: capitalize;
+}
+
+#product_reviews_block_tab .report_btn.disabled {
+  background: #fff;
+  color: #acaaa6;
+}
+
+.usefulness_btn.active, .usefulness_btn.active:hover {
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+}
+
+.review_button .btn.active {
+  display: inline-block;
+}
+
+/*******************DONGND CSS FOR REVIEWS END*****************************/
+/*******************DONGND CSS FOR COMPARE BEGIN*****************************/
+.leo-compare-button.added, .leo-wishlist-button.added {
+  background: #2FB5D2;
+  color: #fff;
+  border-color: #fff;
+}
+
+.leo-compare-button.active, .leo-wishlist-button.active {
+  border-color: #2FB5D2;
+}
+
+.leo-productscompare-item .thumbnail-container {
+  height: 100%;
+}
+
+.leo-productscompare-item .product-description {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.leo-productscompare-item .delete-productcompare .leo-compare-button {
+  float: left;
+}
+.rtl .leo-productscompare-item .delete-productcompare .leo-compare-button {
+  float: right;
+}
+
+.product-rating {
+  display: inline-block;
+}
+
+/*******************DONGND CSS FOR COMPARE END*****************************/
+/*******************DONGND CSS FOR WISHLIST BEGIN*****************************/
+.list-wishlist {
+  margin: 20px 0;
+}
+
+.leo-save-wishlist-loading {
+  display: none;
+}
+
+.list-wishlist tr, .leo-wishlistproduct-item {
+  -moz-transition: background-color 1.5s;
+  -webkit-transition: background-color 1.5s;
+  -o-transition: background-color 1.5s;
+  transition: background-color 1.5s;
+}
+
+.list-wishlist tr.new, .list-wishlist tr.active, .list-wishlist tr.show.active {
+  background-color: #4880D2 !important;
+}
+
+.leo-modal-wishlist .modal-footer {
+  display: none;
+}
+
+.leo-modal-wishlist.enable-action .modal-footer {
+  display: block;
+}
+
+.leo-modal-wishlist-loading {
+  display: none;
+}
+
+/*
+.leo-compare-wishlist-button
+{
+	position: relative;
+}
+*/
+.leo-list-wishlist {
+  /*
+  display: none;
+  position: absolute;
+  
+  */
+  z-index: 999;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+.leo-wishlist-button.dropdown-toggle::after {
+  display: none;
+}
+
+.leo-wishlist-button-dropdown {
+  display: inline-block;
+}
+
+.leo-wishlist-button {
+  background-color: transparent;
+}
+
+/*
+.popover-list-wishlist .popover-title
+{
+	text-align: center;
+}
+
+.popover-list-wishlist .popover-content
+{
+	padding: 0;
+}
+
+.popover-list-wishlist .list-group-item
+{
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+}
+*/
+.wishlist-item.added, .wishlist-item.added:hover {
+  background-color: #2fb5d2;
+  color: #fff;
+}
+
+.wishlist-item:hover, .move-wishlist-item:hover {
+  background-color: #f7f7f9;
+}
+
+/*
+.leo-list-wishlist .list-group-item.wishlist-item.active, .leo-list-wishlist .list-group-item.wishlist-item.active:focus
+{
+	border-color: none;
+	background-color: none;
+}
+*/
+.view-wishlist-product {
+  float: left;
+}
+.rtl .view-wishlist-product {
+  float: right;
+}
+
+.list-wishlist tr.show {
+  background-color: #d9edf7 !important;
+}
+
+.leo-view-wishlist-product-loading {
+  display: none;
+  float: right;
+}
+.rtl .leo-view-wishlist-product-loading {
+  float: left;
+}
+
+.leo-wishlist-product {
+  margin-bottom: 20px;
+}
+
+.delete-wishlist-product .leo-wishlist-button {
+  float: right;
+}
+.rtl .delete-wishlist-product .leo-wishlist-button {
+  float: left;
+}
+
+.send-wishlist {
+  display: none;
+}
+
+.wishlist-product-info .form-control {
+  background: #fff;
+}
+
+.send-wishlist {
+  margin-bottom: 20px;
+}
+
+.wishlist_email_status_loading {
+  border: 2px solid #414141;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.wishlist_email_status_loading, .send_wishlist_msg, .leo-modal-send-wishlist-loading {
+  display: none;
+}
+
+.leo-modal-reset-send-wishlist-bt {
+  float: left;
+}
+.rtl .leo-modal-reset-send-wishlist-bt {
+  float: right;
+}
+
+.send_wishlist_success {
+  color: #5cb85c;
+}
+
+.send_wishlist_error {
+  color: #f0ad4e;
+}
+
+.send_wishlist_form_content .has-success input, .send_wishlist_form_content .has-warning input {
+  pointer-events: none;
+}
+
+.leo-wishlist-button-delete {
+  float: right;
+}
+.rtl .leo-wishlist-button-delete {
+  float: left;
+}
+
+#products .product-miniature.leo-wishlistproduct-item {
+  margin-bottom: 30px;
+}
+
+.leo-compare-review-dropdown .dropdown-menu {
+  width: 100%;
+}
+
+/*******************DONGND CSS FOR WISHLIST END*****************************/

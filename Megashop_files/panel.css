@@ -1,0 +1,358 @@
+/* RIGHT TO LEFT */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BORDER RADIUS */
+/* DOUBLE BORDERS */
+/* TRIPLE BORDERS */
+/* FONT FACE */
+/* OPACITY */
+/* TEXT SHADOW */
+/**
+* Transition-timing-function property@mixin 
+*/
+/*background RGBA
+============================================*/
+/****/
+/**parallax**/
+/**absolute**/
+/*  
+ * LAYOUT VARIABLES 
+ */
+#pts-panelthemechanger {
+  display: none;
+}
+
+.colorpicker {
+  z-index: 9999999 !important;
+}
+
+.paneltool .buttons-group button {
+  font-size: 11px !important;
+  font-family: arial !important;
+  padding: 8px 12px;
+}
+
+.paneltool input, .paneltool select, .paneltool label {
+  font-size: 11px;
+  padding: 3px 4px;
+  display: inline-block;
+  font-family: arial !important;
+}
+
+.paneltool input,
+.paneltool select {
+  width: 120px;
+  border: solid 1px #f3f3f3;
+}
+
+.paneltool .clear-bg span {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.buttons-group {
+  padding: 6px 12px;
+}
+
+.pts-paneltool {
+  position: fixed;
+  top: 0px;
+  transition: all 0.6s;
+  -webkit-box-shadow: 1px -1px 3px #888888;
+  box-shadow: 1px -1px 3px #888888;
+  z-index: 9999;
+  width: 335px;
+  height: 100%;
+  background: #FFF;
+  left: -335px;
+  font-size: 11px;
+}
+@media (max-width: 991px) {
+  .pts-paneltool {
+    display: none;
+  }
+}
+
+.pts-paneltool > .paneltool {
+  position: relative;
+  clear: both;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.paneltool label {
+  width: 120px;
+  font-size: 11px;
+  font-family: arial !important;
+}
+
+.pts-paneltool.active {
+  left: 0;
+  z-index: 999999;
+}
+
+.paneltool.active .panelbutton {
+  color: red;
+}
+
+.paneltool .panel-group .panel-heading {
+  padding: 4px 5px;
+}
+
+.paneltool .panel-title {
+  font-size: 11px;
+  padding: 2px 12px;
+  font-weight: bold;
+}
+
+.pts-customize .bi-wrapper > div {
+  float: left;
+  width: 25px;
+  height: 25px;
+  margin: 5px 6px;
+  border: solid 1px #999;
+  cursor: hand;
+  cursor: pointer;
+}
+.pts-customize .bi-wrapper > div.active {
+  border-color: red;
+}
+.pts-customize .nav-tabs {
+  background: #5f6873;
+  text-align: center;
+  border-bottom: solid 3px #FFF;
+}
+.pts-customize .nav-tabs li {
+  float: none;
+  display: inline-block;
+}
+.pts-customize .nav-tabs li a {
+  background: #95a0a8;
+  color: #3d3d3d !important;
+  font-family: arial !important;
+  border: none;
+  padding: 6px 8px;
+  text-transform: uppercase;
+}
+.pts-customize .nav-tabs li a.active {
+  background: #FFF !important;
+}
+.pts-customize .tab-content {
+  padding: 15px;
+}
+
+/***/
+#customize-form .nav-tabs {
+  padding-top: 12px;
+}
+
+#customize-form .nav-tabs li {
+  margin: 0;
+  padding: 0 !important;
+}
+
+#customize-form .nav-tabs > li > a {
+  padding: 5px 6px;
+  font-size: 11px;
+}
+
+#custom-accordionelements .panel,
+#custom-accordionselectors .panel {
+  margin-bottom: 5px;
+}
+
+/***/
+.themecollection > div {
+  float: left;
+  margin-bottom: 1.23077rem;
+  margin-right: 0.53846rem;
+  padding: 4px;
+  border: 1px solid #ccc;
+}
+.themecollection > div.active {
+  border-color: #d9534f;
+}
+
+.themecollection > div.active {
+  border-color: #d9534f;
+}
+
+.themecollection {
+  padding: 15px;
+  display: block;
+}
+
+#panethemesettingfrm .pts-paneltitle {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.pts-panelbutton {
+  border: solid 1px #152c25;
+  background: #152c25;
+  color: #FFF;
+  padding: 16px 20px;
+  position: absolute;
+  right: -51px;
+  top: 30%;
+  border-left: none;
+  cursor: hand;
+  cursor: pointer;
+  -webkit-box-shadow: 2px -1px 2px #888888;
+  box-shadow: 2px -1px 2px #152c25;
+}
+
+/**
+ *
+ */
+/**
+ *
+ */
+.themechanger .pts-panelbutton {
+  top: 36%;
+  background: #d9534f;
+  border-color: #d9534f;
+}
+
+/**
+ *
+ */
+#pts-paneltool {
+  background: #5f6873;
+  left: -336px;
+}
+#pts-paneltool .pts-panelbutton {
+  border: solid 1px #152c25;
+  background: #152c25;
+  color: #FFF;
+  padding: 16px 20px;
+  position: absolute;
+  right: -51px;
+  top: 25%;
+  border-left: none;
+  cursor: hand;
+  cursor: pointer;
+  -webkit-box-shadow: 2px -1px 2px #888888;
+  box-shadow: 2px -1px 2px #152c25;
+}
+#pts-paneltool .pts-customize-title {
+  background: rgba(42, 58, 71, 0.75);
+  font-weight: bold;
+  padding: 12px 12px;
+  color: #f3f3f3;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+#pts-paneltool.active {
+  left: 0;
+}
+#pts-paneltool.active .pts-panelbutton {
+  border: solid 1px #FFF;
+  background: #FFF;
+  color: #152c25;
+}
+#pts-paneltool .nav-tabs {
+  background: #5f6873;
+  text-align: center;
+  border-bottom: solid 3px #FFF;
+}
+#pts-paneltool .nav-tabs li {
+  float: none;
+  display: inline-block;
+}
+#pts-paneltool .nav-tabs li a {
+  background: #95a0a8;
+  color: #3d3d3d !important;
+  font-family: arial !important;
+  border: none;
+  padding: 6px 8px;
+  text-transform: uppercase;
+}
+#pts-paneltool .nav-tabs li a.active {
+  background: #FFF !important;
+}
+#pts-paneltool .card {
+  margin-bottom: 0;
+  border: none;
+}
+#pts-paneltool .p-card-header {
+  font-weight: bold;
+  background: #5f6873;
+  padding: 10px 20px;
+  border-radius: none;
+  transition: all 0.5s ease;
+  border-bottom: solid 1px #68717c;
+}
+#pts-paneltool .p-card-header a {
+  color: #FFF !important;
+  font-family: arial !important;
+}
+#pts-paneltool .p-card-header:hover {
+  background: #95a0a8;
+  transition: all 0.5s ease;
+}
+#pts-paneltool .card-block {
+  background: #FFF;
+}
+
+.profiles-selectors {
+  padding: 5px 12px;
+  min-height: 30px;
+  color: #000;
+}
+.profiles-selectors .profile-item {
+  display: none;
+  width: 100%;
+  position: relative;
+  height: 30px;
+  background: #FFF;
+  margin-bottom: 1px;
+  border: solid 3px #3d3d3d;
+  cursor: pointer;
+  cursor: hand;
+  clear: both;
+}
+.profiles-selectors .profile-item:hover, .profiles-selectors .profile-item.active {
+  border-color: #FFF;
+}
+.profiles-selectors .profile-item.active {
+  display: block;
+}
+.profiles-selectors .profile-item > div {
+  width: 30px;
+  height: 100%;
+  float: left;
+  color: #3d3d3d;
+}
+.profiles-selectors .profile-item .profile-name {
+  float: right;
+  line-height: 29px;
+  width: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  position: absolute;
+  right: 0;
+  background: #FFF;
+  font-family: arial !important;
+}
+.profiles-selectors:hover .profile-item {
+  display: block;
+}
+
+.editortool-title {
+  background: #374652 none repeat scroll 0 0;
+  color: #f3f3f3;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 0;
+  padding: 15px;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+
+.theme-preview {
+  display: none !important;
+}
